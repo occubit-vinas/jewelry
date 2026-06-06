@@ -9,6 +9,16 @@ export default function Home() {
   useEffect(() => {
     fetchCollections();
   }, [fetchCollections]);
+//   useEffect(() => {
+//   async function getUsers() {
+//     const res = await fetch("/api/user");
+//     const data = await res.json();
+
+//     console.log(data);
+//   }
+
+//   getUsers();
+// }, []);
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black p-6">

@@ -85,6 +85,11 @@ const ProductSchema = new Schema(
       required: true,
       default: 0
     },
+    profitPercentage: {
+      type: Number,
+      required: true,
+      default: 0
+    },
     variants: [ProductVariantSchema],
   },
   {

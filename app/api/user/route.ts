@@ -1,6 +1,6 @@
 import clientPromise from "@/lib/mongodb";
-import { connectDB } from "@/lib/mongoose";
-import { User } from "@/models/User";
+// import { connectDB } from "@/lib/mongoose";
+// import { User } from "@/models/User";
 
 export async function GET() {
   try {
@@ -21,43 +21,28 @@ export async function GET() {
       { status: 500 },
     );
   }
-  // try {
-  //   await connectDB();
-  //   const users = await User.find({});
-  //   return Response.json(users);
-  // } catch (error) {
-  //   return Response.json({ error: String(error) }, { status: 500 });
-  // }
-
-  // const client = await clientPromise;
-
-  // const users = await client
-  //   .db()
-  //   .collection("User")
-  //   .find({})
-  //   .toArray();
-
-  // const users = await client.db().admin().listDatabases()
-
-  // return Response.json(users);
 }
 
-// export async function POST(req: Request) {
+// export async function GET() {
 //   try {
-//     await connectDB();
+//     const client = await clientPromise;
+//     const db = client.db();
 
-//     const body = await req.json();
+//     const products = await db
+//       .collection("products")
+//       .find({})
+//       .toArray();
 
-//     const user = await User.create({
-//       name: body.name,
-//       email: body.email,
-//       age: body.age,
+//     return Response.json({
+//       success: true,
+//       products,
 //     });
-
-//     return Response.json(user, { status: 201 });
 //   } catch (error) {
 //     return Response.json(
-//       { error: String(error) },
+//       {
+//         success: false,
+//         error: String(error),
+//       },
 //       { status: 500 }
 //     );
 //   }
