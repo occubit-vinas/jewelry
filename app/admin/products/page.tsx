@@ -95,9 +95,7 @@ export default function ProductListingPage() {
   }, [message]);
 
   // Load products and pricing rules on mount
-  useEffect(() => {
-    fetchInitialData();
-  }, []);
+  
 
   async function fetchInitialData() {
     try {
@@ -127,6 +125,10 @@ export default function ProductListingPage() {
       setLoading(false);
     }
   }
+
+  useEffect(() => {
+    fetchInitialData();
+  }, []);
 
   // Price Calculation Helper
   const calculatePrice = ({
