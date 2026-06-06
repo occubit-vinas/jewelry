@@ -97,5 +97,8 @@ const ProductSchema = new Schema(
   }
 );
 
-export const Product = models.Product || model("Product", ProductSchema);
+if (mongoose.models.Product) {
+  delete (mongoose.models as any).Product;
+}
+export const Product = mongoose.models.Product || mongoose.model("Product", ProductSchema);
 export default Product;

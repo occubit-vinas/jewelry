@@ -82,7 +82,7 @@ export default function SellerSignUp() {
         {/* Header */}
         <div className="text-center flex flex-col gap-2">
           <Link href="/" className="inline-block mx-auto text-amber-500 hover:text-amber-600 font-extrabold text-2xl tracking-tight bg-gradient-to-r from-amber-500 to-yellow-600 bg-clip-text text-transparent">
-            OCCUBIT JEWELRY
+            JEWELRY
           </Link>
           <div>
             <h1 className="text-lg font-bold text-zinc-800 dark:text-zinc-150">Create Seller Account</h1>

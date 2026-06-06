@@ -17,11 +17,26 @@ const SellerSchema = new Schema(
       type: String,
       required: true,
     },
+    status: {
+      type: String,
+      enum: ["pending", "approved", "rejected"],
+      default: "pending",
+      required: true,
+    },
+    allowedProducts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Product",
+      },
+    ],
   },
   {
     timestamps: true,
   }
 );
 
-export const Seller = models.Seller || model("Seller", SellerSchema);
+if (mongoose.models.Seller) {
+  delete (mongoose.models as any).Seller;
+}
+export const Seller = mongoose.models.Seller || mongoose.model("Seller", SellerSchema);
 export default Seller;
